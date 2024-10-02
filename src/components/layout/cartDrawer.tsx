@@ -62,7 +62,7 @@ export default function CartDrawer() {
             Total: ${totalPrice.toFixed(2)}
           </p>
           <Button className="w-full mt-4">
-            <Link href="/cart">View Cart</Link>
+            <Link href="#">Proceed to Checkout</Link>
           </Button>
         </div>
       </SheetContent>
