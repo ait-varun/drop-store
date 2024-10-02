@@ -11,7 +11,9 @@ export default function Store() {
     data: products,
     isLoading,
     error,
-  } = useGetQuery<Product[]>("https://fakestoreapi.com/products/?limit=8");
+  } = useGetQuery<Product[]>(
+    `${process.env.NEXT_PUBLIC_STORE_URL}/products/?limit=8`
+  );
 
   return (
     <div className="min-h-screen">

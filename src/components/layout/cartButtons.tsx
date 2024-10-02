@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import { Trash, Trash2 } from "lucide-react";
 
 interface CartButtonsProps {
   updateQuantity: (id: number, quantity: number) => void;
@@ -35,7 +36,7 @@ export default function CartButtons({
           size="icon"
           variant="destructive"
           onClick={() => removeFromCart(item.id)}>
-          ×
+          <Trash2 className="h-4 w-4" />
         </Button>
       </div>
     </>
