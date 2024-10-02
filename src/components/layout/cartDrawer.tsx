@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import CartButtons from "./cartButtons";
 export default function CartDrawer() {
   const { cart, removeFromCart, updateQuantity, totalItems, totalPrice } =
     useCart();
@@ -48,27 +49,11 @@ export default function CartDrawer() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Button
-                  size="icon"
-                  variant="outline"
-                  onClick={() => updateQuantity(item.id, item.quantity - 1)}>
-                  -
-                </Button>
-                <span>{item.quantity}</span>
-                <Button
-                  size="icon"
-                  variant="outline"
-                  onClick={() => updateQuantity(item.id, item.quantity + 1)}>
-                  +
-                </Button>
-                <Button
-                  size="icon"
-                  variant="destructive"
-                  onClick={() => removeFromCart(item.id)}>
-                  ×
-                </Button>
-              </div>
+              <CartButtons
+                item={item}
+                removeFromCart={removeFromCart}
+                updateQuantity={updateQuantity}
+              />
             </div>
           ))}
         </div>
