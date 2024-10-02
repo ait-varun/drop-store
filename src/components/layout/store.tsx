@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/types/store";
 import ProductCard from "./productCard";
