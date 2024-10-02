@@ -26,7 +26,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <Card className="w-full">
       <CardContent className="">
-        <div className="aspect-square relative mb-4">
+        <div className="aspect-square relative mb-4 mt-4">
           <Image
             src={product.image}
             alt={product.title}
