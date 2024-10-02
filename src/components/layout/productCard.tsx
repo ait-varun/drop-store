@@ -25,7 +25,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <Card className="w-full">
-      <CardContent className="p-4">
+      <CardContent className="">
         <div className="aspect-square relative mb-4">
           <Image
             src={product.image}
@@ -37,10 +37,14 @@ export default function ProductCard({ product }: { product: Product }) {
             className="object-cover rounded-md"
           />
         </div>
-        <h3 className="text-sm font-semibold line-clamp-2">{product.title}</h3>
+        <h3 className="text-sm font-semibold line-clamp-2 md:h-10">
+          {product.title}
+        </h3>
       </CardContent>
       <CardFooter className="flex justify-between items-center">
-        <p className="text-sm font-medium">${product.price.toFixed(2)}</p>
+        <p className="text-sm font-medium md:mr-1">
+          ${product.price.toFixed(2)}
+        </p>
         {cartItem && cartItem.quantity > 0 ? (
           <CartButtons
             updateQuantity={updateQuantity}
