@@ -10,7 +10,7 @@ export default function AllProducts() {
     data: products,
     isLoading,
     error,
-  } = useGetQuery<Product[]>(`${process.env.NEXT_PUBLIC_STORE_URL}/products`);
+  } = useGetQuery<Product[]>("https://fakestoreapi.com/products/?limit=8");
   return (
     <div className="min-h-screen">
       <div className="sticky top-0 z-10 bg-background shadow-md transition-shadow duration-300">
