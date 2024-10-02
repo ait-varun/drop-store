@@ -3,7 +3,6 @@ import CartDrawer from "@/components/layout/cartDrawer";
 import ProductCard from "@/components/layout/productCard";
 import { Product } from "@/types/store";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import useGetQuery from "@/hooks/useGetQuery";
 
 export default function AllProducts() {
