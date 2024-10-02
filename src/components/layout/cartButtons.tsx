@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
-import { Trash, Trash2 } from "lucide-react";
+import { Trash2 } from "lucide-react";
 
 interface CartButtonsProps {
   updateQuantity: (id: number, quantity: number) => void;
