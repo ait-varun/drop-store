@@ -10,7 +10,7 @@ export default function AllProducts() {
     data: products,
     isLoading,
     error,
-  } = useGetQuery<Product[]>("https://fakestoreapi.com/productss");
+  } = useGetQuery<Product[]>("https://fakestoreapi.com/products");
 
   return (
     <div className="min-h-screen">
