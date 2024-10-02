@@ -34,7 +34,7 @@ export default function ProductCard({ product }: { product: Product }) {
             placeholder="blur"
             blurDataURL={rgbDataURL(131, 131, 131)}
             fill
-            className="object-cover rounded-md"
+            className="contain rounded-md"
           />
         </div>
         <h3 className="text-sm font-semibold line-clamp-2 md:h-10">
