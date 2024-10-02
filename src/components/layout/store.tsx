@@ -5,24 +5,32 @@ import Link from "next/link";
 import { Product } from "@/types/store";
 import ProductCard from "./productCard";
 import CartDrawer from "./cartDrawer";
+import useGetQuery from "@/hooks/useGetQuery";
 
 export default function Store() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [products, setProducts] = useState<Product[]>([]);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-        setIsLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   fetch("https://fakestoreapi.com/products/?limit=8")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setProducts(data);
+  //       setIsLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching products:", error);
+  //       setIsLoading(false);
+  //       throw new Error("Failed to Get products");
+  //     });
+  // }, []);
+
+  const {
+    data: products,
+    isLoading,
+    error,
+  } = useGetQuery<Product[]>("https://fakestoreapi.com/products/?limit=8");
 
   return (
     <div className="min-h-screen">
@@ -46,7 +54,7 @@ export default function Store() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {products.map((product) => (
+            {products?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

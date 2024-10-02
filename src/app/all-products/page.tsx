@@ -4,24 +4,14 @@ import ProductCard from "@/components/layout/productCard";
 import { Product } from "@/types/store";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import useGetQuery from "@/hooks/useGetQuery";
 
 export default function AllProducts() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-        setIsLoading(false);
-      });
-  }, []);
+  const {
+    data: products,
+    isLoading,
+    error,
+  } = useGetQuery<Product[]>("https://fakestoreapi.com/products");
 
   return (
     <div className="min-h-screen">
@@ -45,7 +35,7 @@ export default function AllProducts() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {products.map((product) => (
+            {products?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
