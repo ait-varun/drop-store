@@ -72,7 +72,7 @@ export default function CartPage() {
             <p className="text-2xl font-semibold">
               Total: ${totalPrice.toFixed(2)}
             </p>
-            <Button className="w-full mt-4">Proceed to Checkout</Button>
+            <Button className="mt-4">Proceed to Checkout</Button>
           </div>
         </div>
       )}

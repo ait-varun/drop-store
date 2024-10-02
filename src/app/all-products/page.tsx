@@ -28,7 +28,7 @@ export default function AllProducts() {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">All Products</h1>
         <div className="flex items-center space-x-4">
-          <Link href="/" className="text-blue-600 hover:underline">
+          <Link href="/" className="hover:underline">
             Home
           </Link>
           <CartDrawer />
