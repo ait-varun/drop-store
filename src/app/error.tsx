@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
+interface ErrorProps {
+  error: Error;
+}
 
-export default function Error({ error }: any) {
+export default function Error({ error }: ErrorProps) {
   return (
     <div className="w-screen h-scree absolute top-0 left-0 z-50 overflow-hidden">
       <div className="flex flex-col items-center justify-center h-screen w-full gap-6 bg-gradient-to-br from-red-100 to-red-200 p-4">

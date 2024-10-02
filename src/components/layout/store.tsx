@@ -40,6 +40,13 @@ export default function Store() {
             ))}
           </div>
         )}
+        {error && (
+          <div className="w-full max-w-2xl max-h-48 overflow-auto bg-white/50 rounded-lg p-4 shadow-inner">
+            <p className="text-lg sm:text-2xl font-bold text-red-600 break-words">
+              {error.message}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
