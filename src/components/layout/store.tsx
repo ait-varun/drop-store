@@ -7,24 +7,6 @@ import CartDrawer from "./cartDrawer";
 import useGetQuery from "@/hooks/useGetQuery";
 
 export default function Store() {
-  // const [products, setProducts] = useState<Product[]>([]);
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   fetch("https://fakestoreapi.com/products/?limit=8")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setProducts(data);
-  //       setIsLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching products:", error);
-  //       setIsLoading(false);
-  //       throw new Error("Failed to Get products");
-  //     });
-  // }, []);
-
   const {
     data: products,
     isLoading,

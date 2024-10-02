@@ -16,6 +16,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <Image
             src={product.image}
             alt={product.title}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill
             className="object-cover rounded-md"
           />
