@@ -29,10 +29,10 @@ export default function Store() {
       <div className="sticky top-0 z-10 bg-background shadow-md transition-shadow duration-300">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold">All Products</h1>
+            <h1 className="text-3xl font-bold">Drop Store</h1>
             <div className="flex items-center space-x-4">
-              <Link href="/" className="hover:underline">
-                Home
+              <Link href="/all-products" className="hover:underline">
+                View All
               </Link>
               <CartDrawer />
             </div>
